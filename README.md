@@ -24,10 +24,11 @@ It installs only what's missing: `python3`, `python3-gpiozero`, `python3-lgpio` 
 these are usually already present. Add `--with-tools` to also install `ddcutil` and `i2c-tools`, which
 help you find the values below. `ddcutil` is also installed automatically when you use `--ddc-backend ddcutil`.
 
-To only download and extract, without installing:
+Or clone and install from the local copy:
 
 ```sh
-mkdir -p kvm-poc && curl -fsSL https://github.com/FuNK3Y/kvm-poc/releases/latest/download/kvm.tar.gz | tar xz -C kvm-poc
+git clone https://github.com/FuNK3Y/kvm-poc.git && cd kvm-poc
+sudo bash install.sh --monitor 20:0x0f:0x11 --monitor 21:0x0f:0x11 --usb-pin 17
 ```
 
 ### Finding the values
